@@ -4,7 +4,7 @@
 ## 환경
 - python 3.9.13  
 
-의존성 설치 후 dqn_test.py 실행
+아래에 있는 import에 관련된 의존성 설치 후 dqn_test.py 실행
 ```
 import gymnasium as gym
 import collections
