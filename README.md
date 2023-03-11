@@ -1,5 +1,25 @@
 # RL-atari
 
+실행방법
+## 환경
+- python 3.9.13  
+
+의존성 설치 후 dqn_test.py 실행
+```
+import gymnasium as gym
+import collections
+import random
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import torchvision.transforms as transforms
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+from FrameStack import FrameStack
+```
+
 ## DQN, CNN을 이용한 atari 강화학습 연습
 ### 평균 Score가 20정도 되었을때의 상태 
 <img src="/sample.gif" width="300" height="300">
