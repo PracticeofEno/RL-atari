@@ -114,7 +114,7 @@ def train(q, q_target, memory, optimizer):
     optimizer.step()
 
 def main():
-    env = gym.make("ALE/Breakout-v5")
+    env = gym.make("ALE/Breakout-v5", render_mode="human")
     
     # q = Qnet().to(device)
     q = torch.load('q.pth')
@@ -129,8 +129,8 @@ def main():
     optimizer = optim.Adam(q.parameters(), lr=learning_rate)
 
     for n_epi in range(100000):
-        epsilon = max(0.1,  0.2 - 0.01*(n_epi/200)) #Linear annealing from 8% to 5%
-        # epsilon = 0
+        # epsilon = max(0.1,  0.15 - 0.01*(n_epi/200)) #Linear annealing from 8% to 5%
+        epsilon = 0
         s = env.reset()
         s = Image.fromarray(s[0])
         s = preprocess(s)
@@ -156,7 +156,7 @@ def main():
             if terminated:
                 break
              
-        if (n_epi % 200 == 0 and n_epi != 0):
+        if (n_epi % 2 == 0 and n_epi != 0):
             q_target.load_state_dict(q.state_dict())
             
         if n_epi%print_interval==0 and n_epi!=0:
