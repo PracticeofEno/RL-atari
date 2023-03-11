@@ -1,7 +1,7 @@
 # RL-atari
 
 ## DQN, CNN을 이용한 atari 강화학습 연습
-### 평균 Score가 20정도 되었을때의 상태  
+### 평균 Score가 20정도 되었을때의 상태 
 <img src="/sample.gif" width="300" height="300">
 
 - Try1 : Actor-critic, FullConnected, 단일 state로 강화학습 시도 으로 시도 -> 잘 동작하지 않아서 구글링 해본결과 DQN방식으로 예제가 많아서 DQN으로 선로 변경
